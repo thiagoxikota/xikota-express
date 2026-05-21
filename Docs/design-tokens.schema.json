@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Xikota DesignTokens Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["projectId","meta","colors","type","spacing","components"],
+  "properties": {
+    "projectId": { "type": "string" },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source","vibe","createdAt"],
+      "properties": {
+        "source": { "type": "string" },
+        "vibe": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "llmVersion": { "type": "string" }
+      }
+    },
+    "colors": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["hex","role"],
+        "properties": {
+          "hex": { "type": "string", "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" },
+          "role": { "type": "string" },
+          "contrastAgainst": { "type": "string" }
+        }
+      }
+    },
+    "type": {
+      "type": "object",
+      "required": ["baseFont","scale"],
+      "properties": {
+        "baseFont": { "type": "string" },
+        "scale": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name","size","lineHeight","weight"],
+            "properties": {
+              "name": { "type": "string" },
+              "size": { "type": "number" },
+              "lineHeight": { "type": "number" },
+              "weight": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "spacing": {
+      "type": "object",
+      "required": ["base","scale"],
+      "properties": {
+        "base": { "type": "number" },
+        "scale": {
+          "type": "array",
+          "items": { "type": "number" }
+        }
+      }
+    },
+    "radius": {
+      "type": "object",
+      "properties": {
+        "small": { "type": "number" },
+        "medium": { "type": "number" },
+        "large": { "type": "number" }
+      }
+    },
+    "elevation": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name","role","props"],
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "props": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "variants": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "colorPairs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["foreground","background","contrastRatio"],
+        "properties": {
+          "foreground": { "type": "string" },
+          "background": { "type": "string" },
+          "contrastRatio": { "type": "number" }
+        }
+      }
+    },
+    "figma": {
+      "type": "object",
+      "properties": {
+        "fileId": { "type": "string" },
+        "nodes": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    }
+  }
+}

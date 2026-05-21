@@ -1,0 +1,38 @@
+{
+  "projectId": "XKT-PRJ-084",
+  "meta": {
+    "source": "web",
+    "vibe": "Minimalista & Clean",
+    "createdAt": "2026-05-20T12:34:00Z",
+    "llmVersion": "gpt-4o-mini-example"
+  },
+  "colors": {
+    "bg": { "hex": "#FFFFFF", "role": "background" },
+    "text": { "hex": "#000000", "role": "text", "contrastAgainst": "bg" },
+    "accent": { "hex": "#E11D48", "role": "accent", "contrastAgainst": "bg" }
+  },
+  "type": {
+    "baseFont": "Inter",
+    "scale": [
+      { "name": "h1", "size": 48, "lineHeight": 56, "weight": 700 },
+      { "name": "h2", "size": 32, "lineHeight": 40, "weight": 600 },
+      { "name": "body", "size": 16, "lineHeight": 24, "weight": 400 }
+    ]
+  },
+  "spacing": { "base": 8, "scale": [8, 16, 24, 32, 40] },
+  "radius": { "small": 6, "medium": 12, "large": 20 },
+  "elevation": { "none": "none", "sm": "0 1px 3px rgba(0,0,0,0.08)", "md": "0 4px 12px rgba(0,0,0,0.08)" },
+  "components": [
+    {
+      "name": "button.primary",
+      "role": "cta",
+      "props": { "background": "accent", "textColor": "#FFFFFF", "padding": [12, 24], "radius": "medium" },
+      "variants": ["default", "hover", "disabled"]
+    }
+  ],
+  "colorPairs": [
+    { "foreground": "#FFFFFF", "background": "#E11D48", "contrastRatio": 4.7 },
+    { "foreground": "#000000", "background": "#FFFFFF", "contrastRatio": 21 }
+  ],
+  "figma": { "fileId": "abc123", "nodes": { "HeroFrame": "0:1", "ButtonPrimary": "0:2" } }
+}
