@@ -25,6 +25,6 @@ echo "Waiting worker to process (5s) ..."
 sleep 5
 
 echo "Fetching project..."
-curl -s "$BASE/projects/$PROJECT_ID" | python -m json.tool
+curl -s "$BASE/projects/$PROJECT_ID" | python3 -m json.tool
 
 echo "Done."

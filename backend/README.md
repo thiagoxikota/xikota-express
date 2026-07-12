@@ -8,7 +8,7 @@ Prereqs
 Install
 
 ```bash
-cd Documents/02_Projects__ao_store/backend
+cd backend
 npm install
 ```
 
